@@ -24,11 +24,20 @@ namespace MiniChatServer
             using (NetworkStream ns = socket.GetStream())
             using (StreamReader sr = new StreamReader(ns))
             using (StreamWriter sw = new StreamWriter(ns))
-                
-            {
-                string inlinje = sr.ReadLine();
-                sw.WriteLine(inlinje);
-                sw.Flush();
+            { 
+                while (true)
+                {
+                    string inlinje = sr.ReadLine();
+                    //Console.WriteLine(inlinje);
+                    string myLine = Console.ReadLine();
+                    //sw.WriteLine(inlinje);
+                    sw.Flush();
+
+                    if (inlinje == "STOP!" || myLine == "STOP!")
+                    {
+                        server.Stop();
+                    }
+                }
             }
         }
         
