@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MiniChatServer
 {
-    class Server
+    class Server : IServer
     {
         public Server()
         {
