@@ -14,8 +14,8 @@ namespace MinChatClient
         {
             string SendStr = "Mathias";
 
-            using (TcpClient client = new TcpClient("localhost", 7))
-            using (NetworkStream ns = client.GetStream())
+            using (TcpClient socket = new TcpClient("localhost", 7))
+            using (NetworkStream ns = socket.GetStream())
             using (StreamReader sr = new StreamReader(ns))
             using (StreamWriter sw = new StreamWriter(ns))
             {

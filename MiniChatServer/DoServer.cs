@@ -1,7 +1,8 @@
 ﻿namespace MiniChatServer
 {
-    interface IServer
+    interface DoServer
     {
         void Start();
+        
     }
 }
